@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct Anki_for_FlagsApp: App {
+    let coreDataStack = CoreDataStack.shared
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, coreDataStack.context)
         }
     }
 }
